@@ -15,13 +15,13 @@ $negara = "indonesia"; // ganti negara
 $page = file_get_contents('https://www.worldometers.info/coronavirus/');
 $com = str_replace(' ','',$page); $com = str_replace('</a>','',$com);
 preg_match_all('/'.ucwords($negara).'<\/td><td(.*?)>(.*?)\<\/td\><td(.*?)>(.*?)<\/td><td(.*?)>(.*?)<\/td><td(.*?)>(.*?)<\/td><td(.*?)>(.*?)<\/td><td(.*?)>(.*?)<\/td><td(.*?)>(.*?)<\/td><td(.*?)>(.*?)<\/td>/', $com, $data);
-$output = "
+echo "
 Negara : $negara <br>
 Total Kasus : ".$data[2][0]." <br>
 Kasus Aktif : ".$data[12][0]." <br>
 Kasus Baru : ".$data[4][0]." <br>
 Total Meninggal : ".$data[6][0]." <br>
-Total Sembuh : ".$data[10][0]." <br>
+Total Sembuh : ".$data[10][0]." <b
 ";
-print_r($output); // Menampilkan Hasil
+
 ?>
